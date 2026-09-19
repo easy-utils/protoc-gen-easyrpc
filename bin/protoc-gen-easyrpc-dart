@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+"""protoc-gen-easyrpc-dart entry point (buf local: plugin)."""
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from easyrpc_gen import core
+from easyrpc_gen import dart
+
+core.run(dart)

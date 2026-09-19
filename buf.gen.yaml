@@ -1,0 +1,31 @@
+# Example buf v2 generation template for the easy-rpc plugins.
+#
+# These plugins are NOT published to the BSR, so they are referenced as
+# `local:` — either by installed name, or as a git array (self-contained,
+# fetched at generate time via uv/uvx). See README.md.
+version: v2
+plugins:
+  # ---- messages (official) -------------------------------------------------
+  # ts:   local: protoc-gen-es  (opt: target=ts)
+  # go:   local: protoc-gen-go  (opt: paths=source_relative)
+  # rust: remote: buf.build/community/neoeinstein-prost
+  # py/java/kt/dart/swift: buf.build official generators
+  #
+  # ---- easy-rpc client + handlers -----------------------------------------
+  - local: protoc-gen-easyrpc-ts
+    out: gen/ts
+  - local: protoc-gen-easyrpc-go
+    out: gen/go
+    opt: paths=source_relative
+  - local: protoc-gen-easyrpc-rust
+    out: gen/rust
+  - local: protoc-gen-easyrpc-python
+    out: gen/py
+  - local: protoc-gen-easyrpc-csharp
+    out: gen/cs
+  - local: protoc-gen-easyrpc-dart
+    out: gen/dart
+  - local: protoc-gen-easyrpc-swift
+    out: gen/swift
+  - local: protoc-gen-easyrpc-kotlin
+    out: gen/kt

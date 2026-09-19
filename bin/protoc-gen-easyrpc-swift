@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+"""protoc-gen-easyrpc-swift entry point (buf local: plugin)."""
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from easyrpc_gen import core
+from easyrpc_gen import swift
+
+core.run(swift)

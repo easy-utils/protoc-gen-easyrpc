@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "protoc-gen-easyrpc"
+version = "3.0.0"
+description = "protoc/buf plugins for easy-rpc (unary + server-stream, proto + proto3 JSON). One Python package, eight languages."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = ["protobuf>=4.25"]
+
+[project.scripts]
+protoc-gen-easyrpc-ts = "easyrpc_gen.entry:ts"
+protoc-gen-easyrpc-go = "easyrpc_gen.entry:go"
+protoc-gen-easyrpc-rust = "easyrpc_gen.entry:rust"
+protoc-gen-easyrpc-python = "easyrpc_gen.entry:python"
+protoc-gen-easyrpc-csharp = "easyrpc_gen.entry:csharp"
+protoc-gen-easyrpc-dart = "easyrpc_gen.entry:dart"
+protoc-gen-easyrpc-swift = "easyrpc_gen.entry:swift"
+protoc-gen-easyrpc-kotlin = "easyrpc_gen.entry:kotlin"
+
+[tool.setuptools]
+packages = ["easyrpc_gen"]
